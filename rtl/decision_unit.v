@@ -1,16 +1,15 @@
 module decision_unit(
-
-input signed [31:0] y_in,
-output reg sepsis_detected
-
+input signed [31:0] y_out,
+output reg sepsis
 );
 
-always @(*)
-begin
-    if(y_in > 0)
-        sepsis_detected = 1;
+parameter THRESHOLD = 32'sd15;
+
+always @(*) begin
+    if (y_out > THRESHOLD)
+        sepsis = 1;
     else
-        sepsis_detected = 0;
+        sepsis = 0;
 end
 
 endmodule
