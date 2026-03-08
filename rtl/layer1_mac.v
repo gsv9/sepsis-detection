@@ -1,4 +1,4 @@
-module layer1_parallel_mac(
+module layer1_mac(
 
 input clk,
 input rst,
